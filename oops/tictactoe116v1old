@@ -1,0 +1,71 @@
+#!/usr/bin/python 
+import sys 
+#below is to use one sigle board to all moves 
+import os 
+#***1.Defining cleanboard*** 
+def cleanboard(v): 
+  print "\n" 
+  print "%s |%s |%s " %(v[0],v[1],v[2]) 
+  print "-----------" 
+  print "%s |%s |%s " %(v[3],v[4],v[5]) 
+  print "-----------" 
+  print "%s |%s |%s " %(v[6],v[7],v[8]) 
+  print "\n" 
+ 
+#***3,function to check winner*** 
+def wincheck(win): 
+  if ((win[0]==win[1]== win[2]=='x') or (win[3]==win[4]==win[5]=='x') or (win[6]==win[7]==win[8]=='x') or (win[0]==win[3]==win[6]=='x') or (win[1]==win[4]==win[7]=='x') or (win[2]==win[5]==win[8]=='x') or (win[0]==win[4]==win[8]=='x') or (win[2]==win[4]==win[6]=='x')): 
+      return 'x' 
+  elif ((win[0]==win[1]==win[2]=='o') or (win[3]==win[4]==win[5]=='o') or (win[6]==win[7]==win[8]=='o') or (win[0]==win[3]==win[6]=='o') or (win[1]==win[4]==win[7]=='o') or ( win[2]==win[5]==win[8]=='o') or (win[0]==win[4]==win[8]=='o') or (win[2]==win[4]==win[6]=='o')): 
+      return 'o' 
+ 
+  return False 
+ 
+#***2.choose player turn*** 
+def chooseturn(player): 
+  print "This is player %s turn" %(player) 
+  if player == 'x': 
+    player = 'o' 
+  else: 
+    player = 'x' 
+  return player 
+ 
+#***declare 9 positions in array*** 
+pos=[" "," "," "," "," "," "," "," "," "] 
+ 
+#***always turn start with x*** 
+pturn='x' 
+#start counting moves to declare draw 
+move=0 
+while True: 
+  cleanboard(pos) 
+  n_player = chooseturn(pturn) 
+#use only valid number 1-9 
+  userinput = int(raw_input("enter your choice in the range 1-9:")) 
+  if userinput > 0 and userinput < 10: 
+#***userinput - 1 is always computer position in board*** 
+    t=userinput-1 
+    if pos[t] == " ": 
+      pos[t] = pturn 
+      pturn=n_player 
+      move=move+1 
+      os.system('clear') 
+      if move == 9: 
+        cleanboard(pos) 
+        print "GAME DRAW" 
+        sys.exit() 
+      val=wincheck(pos) 
+      if val=='x': 
+        cleanboard(pos) 
+        print "player 'x'win" 
+        sys.exit() 
+      elif val=='o': 
+        cleanboard(pos) 
+        print "player 'o' win" 
+        sys.exit() 
+    else: 
+      os.system('clear') 
+      print"position already used, use other" 
+  else: 
+    os.system('clear') 
+    print "invalid number, please enter betwnn 1-9"

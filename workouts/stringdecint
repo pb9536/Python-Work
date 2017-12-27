@@ -1,0 +1,8 @@
+#!/usr/bin/python
+
+fname="Yaminikanth"
+lname="Ch"
+age=25
+perc=98.5
+
+print "Hello %s %s, your age is %d and your total percentage in engineering is %d" %(fname,lname,age,perc)

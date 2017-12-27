@@ -1,0 +1,21 @@
+#!/usr/bin/python
+
+f1=open("input.txt","r")
+#r=f1.read()
+#lines=f1.readline()
+#lines=f1.readline()
+
+count=0
+
+for lines in f1.read():
+	if lines=='\n':
+		count=count+1
+print count
+
+f1.close()
+
+#f2=open("input1.txt","w")
+#f2.write("Hello is is new file\n")
+#print f2
+
+

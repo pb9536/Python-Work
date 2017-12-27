@@ -1,0 +1,5 @@
+['chacl'
+       ls - list directory contents
+
+ls - list directory contents
+

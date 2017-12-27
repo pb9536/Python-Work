@@ -1,0 +1,17 @@
+#!/usr/bin/python
+#Demo on the dialogs
+
+import sys
+
+a=sys.argv[::]
+
+print "The Count is : %s" %(len(a))
+print "The total number of arguments are: %s" %(a)
+
+if a%2 == 0:
+	print "The Given number is even %d" %(a)
+else:
+	print "The Given number is odd %d" %(a)
+
+
+

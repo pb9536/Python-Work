@@ -1,0 +1,24 @@
+#!/usr/bin/python
+
+class MyString(object):
+    def __init__(self,s):
+        self.s = s
+
+    def upper(self):
+       return self.s.upper()
+     
+    def lower(self):
+       return self.s.lower() 
+
+myname = MyString("This is a test string")
+
+name = "Yaminikanth Chitakala"
+
+print name.upper()
+print myname.s
+print myname.upper()
+print myname.lower()
+print name.lower()
+print myname.lower()
+
+

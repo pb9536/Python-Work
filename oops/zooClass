@@ -1,0 +1,21 @@
+#!/usr/bin/python
+
+class Zoo(object):
+    
+    def __init__(self,pets,animals,mamals):
+        self.pets = pets
+        self.animals = animals
+        self.mamals = mamals
+
+    def Welcome(self):
+        print "Welcome to the Zoo!"
+
+myZoo = Zoo("Cats","Dogs","Whales");
+
+myZoo.Welcome()
+print myZoo.pets
+print myZoo.animals
+print myZoo.mamals
+
+
+

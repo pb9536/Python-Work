@@ -1,0 +1,61 @@
+#!/usr/bin/python
+import sys
+import os
+
+def cleanBoard(sel):
+	print "\n"
+	print " %s | %s | %s " %(sel[0],sel[1],sel[2])
+	print "............."
+	print " %s | %s | %s " %(sel[3],sel[4],sel[5])
+	print "............."
+	print " %s | %s | %s " %(sel[6],sel[7],sel[8])
+	print "\n"
+
+def winCheck(win,le):
+	return ((win[0] == le and win[1] == le and win[2] == le) or
+	(win[3] == le and win[4] == le and win[5] == le) or
+	(win[6] == le and win[7] == le and win[8] == le) or
+	(win[0] == le and win[3] == le and win[6] == le) or
+	(win[1] == le and win[4] == le and win[7] == le) or
+	(win[2] == le and win[5] == le and win[8] == le) or
+	(win[0] == le and win[4] == le and win[8] == le) or
+	(win[2] == le and win[4] == le and win[6] == le))
+	
+def chooseTurn(player):
+	print "This is player %s turn " %(player)
+	if player == 'X':
+			player = 'O'
+	else:
+			player = 'X'
+	return player
+
+pos = [" "," "," "," "," "," "," "," "," "]
+
+pturn='X'
+while True:
+	cleanBoard(pos)
+	n_player = chooseTurn(pturn)	
+	userinput = int(raw_input("Enter you choice in the range of 1-9 : "))
+	
+	if userinput > 0 and userinput < 10:
+		t=userinput-1
+		if pos[t] == " ":
+			pos[t] = pturn
+			pturn = n_player
+
+			os.system('clear')
+
+			if (winCheck(win,'X')):
+				print "The Winner is X"
+			else (winCheck(win,'O')):
+				print "The Winner is O"
+
+		else:
+			os.system('clear')
+			print "the position is alreay used, use another one"
+	else:
+			os.system('clear')
+			print "invalid number, please enter numbers in the range 1 to 9\n\n"
+	
+
+	

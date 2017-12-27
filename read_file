@@ -1,0 +1,13 @@
+#!/usr/bin/python
+
+#with open('out.txt', 'r') as myfile:
+#   data=myfile.read(12)
+
+#print data,
+
+with open("out.txt", "r") as filestream:
+    with open("answers.txt", "w") as filestreamtwo:
+        for line in filestream:
+            currentline = line.split(",")
+            total = str((currentline[0])) + "\n"
+            filestreamtwo.write(total)

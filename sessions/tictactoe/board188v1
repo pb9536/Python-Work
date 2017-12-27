@@ -1,0 +1,88 @@
+#!/usr/bin/python
+import sys
+import os
+
+def won(player):
+		cleanBoard(pos)
+		print "Player %s won the game!" %(player)
+		sys.exit()
+
+def draw_game(dg):
+		cleanBoard(pos)
+		print "The game is a tie break!"
+		sys.exit()
+
+def cleanBoard(sel):
+	print "\n"
+	print " %s | %s | %s " %(sel[0],sel[1],sel[2])
+	print "............."
+	print " %s | %s | %s " %(sel[3],sel[4],sel[5])
+	print "............."
+	print " %s | %s | %s " %(sel[6],sel[7],sel[8])
+	print "\n"
+
+def winCheck(win):
+	if win[0]=='X' and win[1]=='X' and win[2]=='X':
+		#won("X")	
+		#Board should be displayed 
+		#Game Over, Press 1 to restart
+		#sys.exit()
+		return 'X'
+	elif win[3]==win[4]==win[5]=='X':
+		return 'X'
+	elif win[6]==win[7]==win[8]=='X':
+		return 'X'	
+	elif win[0]==win[3]==win[6]=='X':
+		return 'X'
+	elif win[1]==win[4]==win[7]=='X':
+		return 'X'
+	elif win[2]==win[5]==win[8]=='X':
+		return 'X'
+	elif win[0]==win[4]==win[8]=='X':
+		return 'X'
+	elif win[2]==win[4]==win[6]=='X':
+		return 'X'
+	elif ((win[3]==win[4]==win[5]=='O') or (win[6]==win[7]==win[8]=='O') or (win[0]==win[3]==win[6]=='O') or (win[1]==win[4]==win[7]=='O') or (win[2]==win[5]==win[8]=='O') or (win[0]==win[4]==win[8]=='O') or (win[2]==win[4]==win[6]=='O') or (win[0]=='O' and win[1]=='O' and win[2]=='O')):
+		return 'O'
+	
+	return False
+
+def chooseTurn(player):
+	print "This is player %s turn " %(player)
+	if player == 'X':
+			player = 'O'
+	else:
+			player = 'X'
+	return player
+
+pos = [" "," "," "," "," "," "," "," "," "]
+
+pturn='X'
+turn=0
+
+while True:
+	cleanBoard(pos)
+	n_player = chooseTurn(pturn)	
+	userinput = int(raw_input("Enter you choice in the range of 1-9 : "))
+	
+	if userinput > 0 and userinput < 10:
+		t=userinput-1
+		if pos[t] == " ":
+			pos[t] = pturn
+			pturn = n_player
+			turn=turn+1
+			os.system('clear')
+			if turn==9:
+			draw_game(turn)
+			val=winCheck(pos)
+			if val=='X':
+				won(val)
+			elif val=='O':
+				won(val)
+		else:
+			os.system('clear')
+			print "Position alreay in use, choose another one"
+	else:
+			os.system('clear')
+			print "Invalid number!, please enter numbers in the range 1 to 9\n\n"
+	

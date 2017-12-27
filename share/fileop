@@ -1,0 +1,13 @@
+#!/usr/bin/python
+# To read the files
+
+myfile=open("test.txt")
+
+#c=myfile.read()
+print myfile.read()
+myfile.close()
+
+myfile=open("test.txt")
+print myfile.read()
+
+

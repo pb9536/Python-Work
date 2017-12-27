@@ -1,0 +1,7 @@
+#demo of displaying date in home directory
+if [[  $PWD == $HOME ]]
+then
+	date
+else 
+	echo " $LOGNAME go to your home directory"
+fi

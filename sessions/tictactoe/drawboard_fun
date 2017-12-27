@@ -1,0 +1,16 @@
+#!/usr/bin/python
+
+def row(v1,v2,v3):
+	print v1 + "|" + v2 + "|"
+
+def col():
+	print "------"
+
+def board():
+	row("X"," "," ")
+	col()
+	row(" ","O"," ")
+	col()
+	row(" "," "," ")
+
+board()

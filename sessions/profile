@@ -1,0 +1,16 @@
+#!/usr/bin/python
+roll=raw_input("Enter Roll Number:: ")
+fname=raw_input("Enter your First Name:: ")
+lname=raw_input("Enter Last Name:: ")
+age=raw_input("Enter your Age:: ")
+gen=raw_input("Enter your Gender(Male/Female):: ")
+
+fl=open("raw.txt","a")
+fl.write(roll + " " +fname+ " " +lname+ " " +age+ " " +gen+"\n" )
+fl.close()
+
+f = open("raw.txt", "r")
+data = f.read()
+for line in data.split("\n"):
+	print line.strip().split()[0]
+

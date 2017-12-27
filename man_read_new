@@ -1,0 +1,25 @@
+#!/usr/bin/python
+
+#copy the list to a temp file from /bin
+
+#1. get the list of commands from /bin
+
+#2. command | head 
+	# man ls | head
+
+#3. redirect the output to a temp file
+
+import os
+
+f=os.popen('man ls | head')
+
+read_lines=f.readlines()
+f.close()
+#print (read_lines[3])
+
+w=open("out.txt","a")
+w.write(str(read_lines[3].lstrip()))
+w.close()
+
+
+

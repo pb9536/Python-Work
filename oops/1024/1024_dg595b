@@ -1,0 +1,202 @@
+#!/usr/bin/python 
+ 
+import os 
+from random import * 
+ 
+class Board(): 
+  def __init__(self): 
+    self.cell = [" "," "," "," "," "," "," "," "," "," "] 
+ 
+  def display(self): 
+    print (" %s | %s | %s " %(self.cell[1], self.cell[2],self.cell[3])) 
+    print ("-----------") 
+    print (" %s | %s | %s " %(self.cell[4], self.cell[5],self.cell[6])) 
+    print ("-----------") 
+    print (" %s | %s | %s " %(self.cell[7], self.cell[8],self.cell[9])) 
+ 
+  def initial_board(self): 
+    self.cell[6] = 2 
+    self.cell[8] = 2 
+ 
+  def update_cell(self, cell_no): 
+    if self.cell[cell_no] == " ": 
+        self.cell[cell_no] = 2 
+ 
+  def rmove(self,n): 
+    if self.cell[n] == " ": 
+       if (self.cell[n-1] == " ") and (self.cell[n-2] != " "): 
+         self.cell[n] = self.cell[n-2] 
+         self.cell[n-2] = " " 
+       elif (self.cell[n-2] == " ") and (self.cell[n-1] != " "): 
+         self.cell[n] = self.cell[n-1] 
+         self.cell[n-1] = " " 
+       elif (self.cell[n-2] != " ") and (self.cell[n-1] != " ") and (self.cell[n-2] == self.cell[n-1]): 
+         self.cell[n] = self.cell[n-2] + self.cell[n-1] 
+         self.cell[n-2] = " " 
+         self.cell[n-1] = " " 
+       elif self.cell[n-2] != self.cell[n-1]: 
+         self.cell[n] = self.cell[n-1] 
+         self.cell[n-1] = self.cell[n-2] 
+         self.cell[n-2] = " " 
+    elif self.cell[n] != " ": 
+      if (self.cell[n-1] == " ") and (self.cell[n-2]!= " ") and (self.cell[n-2]!= self.cell[n]): 
+        self.cell[n-1] = self.cell[n-2] 
+        self.cell[n-2] = " " 
+      elif (self.cell[n-1] == " ") and (self.cell[n-2]!= " ") and (self.cell[n-2] == self.cell[n]): 
+        self.cell[n] = self.cell[n-2] + self.cell[n] 
+        self.cell[n-2] = " " 
+      elif (self.cell[n-2] == " ") and (self.cell[n-1] == self.cell[n]): 
+        self.cell[n] = self.cell[n-1] + self.cell[n] 
+        self.cell[n-1] = " " 
+      elif (self.cell[n-2] == self.cell[n-1]) and (self.cell[n-1] == self.cell[n]): 
+        self.cell[n] = self.cell[n-1] + self.cell[n] 
+        self.cell[n-1] = self.cell[n-2] 
+        self.cell[n-2] = " " 
+      elif (self.cell[n-2] != " ") and (self.cell[n-1]!= " ") and (self.cell[n-2] == self.cell[n-1]) and (self.cell[n-1] != self.cell[n]): 
+        self.cell[n-1] = self.cell[n-2] + self.cell[n-1] 
+        self.cell[n-2] = " " 
+ 
+ 
+  def lmove(self,n): 
+    if self.cell[n] == " ": 
+       if (self.cell[n+1] == " ") and (self.cell[n+2] != " "): 
+         self.cell[n] = self.cell[n+2] 
+         self.cell[n+2] = " " 
+       elif (self.cell[n+2] == " ") and (self.cell[n+1] != " "): 
+         self.cell[n] = self.cell[n+1] 
+         self.cell[n+1] = " " 
+       elif (self.cell[n+2] != " ") and (self.cell[n+1] != " ") and (self.cell[n+2] == self.cell[n+1]): 
+         self.cell[n] = self.cell[n+2] + self.cell[n+1] 
+         self.cell[n+2] = " " 
+         self.cell[n+1] = " " 
+       elif self.cell[n+2] != self.cell[n+1]: 
+         self.cell[n] = self.cell[n+1] 
+         self.cell[n+1] = self.cell[n+2] 
+         self.cell[n+2] = " " 
+    elif self.cell[n] != " ": 
+      if (self.cell[n+1] == " ") and (self.cell[n+2]!= " ") and (self.cell[n+2]!= self.cell[n]): 
+        self.cell[n+1] = self.cell[n+2] 
+        self.cell[n+2] = " " 
+      elif (self.cell[n+1] == " ") and (self.cell[n+2]!= " ") and (self.cell[n+2] == self.cell[n]): 
+        self.cell[n] = self.cell[n+2] + self.cell[n] 
+        self.cell[n+2] = " " 
+      elif (self.cell[n+2] == " ") and (self.cell[n+1] == self.cell[n]): 
+        self.cell[n] = self.cell[n+1] + self.cell[n] 
+        self.cell[n+1] = " " 
+      elif (self.cell[n+2] == self.cell[n+1]) and (self.cell[n+1] == self.cell[n]): 
+        self.cell[n] = self.cell[n+1] + self.cell[n] 
+        self.cell[n+1] = self.cell[n+2] 
+        self.cell[n+2] = " " 
+      elif (self.cell[n+2] != " ") and (self.cell[n+1]!= " ") and (self.cell[n+2] == self.cell[n+1]) and (self.cell[n+1] != self.cell[n]): 
+        self.cell[n+1] = self.cell[n+2] + self.cell[n+1] 
+        self.cell[n+2] = " " 
+ 
+  def umove(self,n): 
+    if self.cell[n] == " ": 
+       if (self.cell[n+3] == " ") and (self.cell[n+6] != " "): 
+         self.cell[n] = self.cell[n+6] 
+         self.cell[n+6] = " " 
+       elif (self.cell[n+6] == " ") and (self.cell[n+3] != " "): 
+         self.cell[n] = self.cell[n+3] 
+         self.cell[n+3] = " " 
+       elif (self.cell[n+6] != " ") and (self.cell[n+3] != " ") and (self.cell[n+6] == self.cell[n+3]): 
+         self.cell[n] = self.cell[n+6] + self.cell[n+3] 
+         self.cell[n+6] = " " 
+         self.cell[n+3] = " " 
+       elif self.cell[n+6] != self.cell[n+3]: 
+         self.cell[n] = self.cell[n+3] 
+         self.cell[n+3] = self.cell[n+6] 
+         self.cell[n+6] = " " 
+    elif self.cell[n] != " ": 
+      if (self.cell[n+3] == " ") and (self.cell[n+6]!= " ") and (self.cell[n+6]!= self.cell[n]): 
+        self.cell[n+3] = self.cell[n+6] 
+        self.cell[n+6] = " " 
+      elif (self.cell[n+3] == " ") and (self.cell[n+6]!= " ") and (self.cell[n+6] == self.cell[n]): 
+        self.cell[n] = self.cell[n+6] + self.cell[n] 
+        self.cell[n+6] = " " 
+      elif (self.cell[n+6] == " ") and (self.cell[n+3] == self.cell[n]): 
+        self.cell[n] = self.cell[n+3] + self.cell[n] 
+        self.cell[n+3] = " " 
+      elif (self.cell[n+6] == self.cell[n+3]) and (self.cell[n+3] == self.cell[n]): 
+        self.cell[n] = self.cell[n+3] + self.cell[n] 
+        self.cell[n+3] = self.cell[n+6] 
+        self.cell[n+6] = " " 
+      elif (self.cell[n+6] != " ") and (self.cell[n+3]!= " ") and (self.cell[n+6] == self.cell[n+3]) and (self.cell[n+3] != self.cell[n]): 
+        self.cell[n+3] = self.cell[n+6] + self.cell[n+3] 
+        self.cell[n+6] = " " 
+ 
+  def dmove(self,n): 
+    if self.cell[n] == " ": 
+       if (self.cell[n-3] == " ") and (self.cell[n-6] != " "): 
+         self.cell[n] = self.cell[n-6] 
+         self.cell[n-6] = " " 
+       elif (self.cell[n-6] == " ") and (self.cell[n-3] != " "): 
+         self.cell[n] = self.cell[n-3] 
+         self.cell[n-3] = " " 
+       elif (self.cell[n-6] != " ") and (self.cell[n-3] != " ") and (self.cell[n-6] == self.cell[n-3]): 
+         self.cell[n] = self.cell[n-6] + self.cell[n-3] 
+         self.cell[n-6] = " " 
+         self.cell[n-3] = " " 
+       elif self.cell[n-6] != self.cell[n-3]: 
+         self.cell[n] = self.cell[n-3] 
+         self.cell[n-3] = self.cell[n-6] 
+         self.cell[n-6] = " " 
+    elif self.cell[n] != " ": 
+      if (self.cell[n-3] == " ") and (self.cell[n-6]!= " ") and (self.cell[n-6]!= self.cell[n]): 
+        self.cell[n-3] = self.cell[n-6] 
+        self.cell[n-6] = " " 
+      elif (self.cell[n-3] == " ") and (self.cell[n-6]!= " ") and (self.cell[n-6] == self.cell[n]): 
+        self.cell[n] = self.cell[n-6] + self.cell[n] 
+        self.cell[n-6] = " " 
+      elif (self.cell[n-6] == " ") and (self.cell[n-3] == self.cell[n]): 
+        self.cell[n] = self.cell[n-3] + self.cell[n] 
+        self.cell[n-3] = " " 
+      elif (self.cell[n-6] == self.cell[n-3]) and (self.cell[n-3] == self.cell[n]): 
+        self.cell[n] = self.cell[n-3] + self.cell[n] 
+        self.cell[n-3] = self.cell[n-6] 
+        self.cell[n-6] = " " 
+      elif (self.cell[n-6] != " ") and (self.cell[n-3]!= " ") and (self.cell[n-6] == self.cell[n-3]) and (self.cell[n-3] != self.cell[n]): 
+        self.cell[n-3] = self.cell[n-6] + self.cell[n-3] 
+        self.cell[n-6] = " " 
+ 
+ 
+  def right_move(self): 
+    gameboard.rmove(3) 
+    gameboard.rmove(6) 
+    gameboard.rmove(9) 
+ 
+  def left_move(self): 
+    gameboard.lmove(1) 
+    gameboard.lmove(4) 
+    gameboard.lmove(7) 
+ 
+  def up_move(self): 
+    gameboard.umove(1) 
+    gameboard.umove(2) 
+    gameboard.umove(3) 
+ 
+  def down_move(self): 
+    gameboard.dmove(7) 
+    gameboard.dmove(8) 
+    gameboard.dmove(9) 
+ 
+gameboard = Board() 
+ 
+gameboard.initial_board() 
+gameboard.display() 
+print "\n" 
+#gameboard.update_cell(1) 
+#gameboard.display() 
+#print "\n" 
+#gameboard.right_move() 
+#gameboard.display() 
+ 
+while True: 
+  z = raw_input() 
+  y =  randint(1,9) 
+  gameboard.update_cell(y) 
+  os.system("clear") 
+  gameboard.display() 
+  print "\n" 
+  gameboard.down_move() 
+  gameboard.display()

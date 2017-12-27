@@ -1,0 +1,8 @@
+#!/usr/bin/python
+pc = raw_input("Select the number from range (1-9): ")
+pc = int(pc)
+if pc >= 1 and pc <= 9:
+	pc = pc-1
+	print "The given number is: %s" %(pc),
+else:
+	print "Number out of range"

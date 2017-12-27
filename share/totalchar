@@ -1,0 +1,9 @@
+#!/usr/bin/python
+#To get total number of characters count
+import sys
+arg = sys.argv[1:]
+total_count=0
+
+for i in arg:
+   total_count = total_count + len(i)
+print "Total number of characters are %d " %(total_count)

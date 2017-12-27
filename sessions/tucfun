@@ -1,0 +1,27 @@
+#!/usr/bin/python 
+ 
+import sys 
+ 
+def cutchar(ch,f): 
+  z=0 
+  for y in open(f,'r'): 
+    for x in y: 
+      z=z+1 
+      if z == ch: 
+       print x 
+    z = 0 
+ 
+def cutwd(ch,ch1,f): 
+  z=0 
+  for y in open(f,'r'): 
+    for x in y: 
+      z=z+1 
+      if z >= ch and z <= ch1: 
+        print x,;sys.stdout.softspace=False; 
+    print "\n" 
+    z = 0 
+ 
+if len(sys.argv[2]) == 1: 
+  cutchar(int(sys.argv[2]),sys.argv[3]) 
+else: 
+  cutwd(int(sys.argv[2][0]),int(sys.argv[2][2]),sys.argv[3])

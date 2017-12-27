@@ -1,0 +1,115 @@
+#!/usr/bin/python
+
+#range function
+import sys
+
+#range function
+
+def Smyrange(x):
+  rng=[]
+  i=0
+  while i<x:
+    rng.append(i)
+    i=i+1
+  return rng
+
+def Dmyrange(x,y):
+  rng=[]
+  while x<y:
+    rng.append(x)
+    x=x+1
+  return rng
+
+def Tmyrange(x,y,z):
+  rng=[]
+  while x<y:
+    rng.append(x)
+    x=x+z
+  return rng
+
+def Rmyrange(x,y,z):
+  rng=[]
+  while x>y:
+    rng.append(x)
+    x=x+z
+  return rng
+
+def myrange(*g):
+  if len(g) == 1:
+    return Smyrange(g[0])
+
+  elif len(g) == 2:
+    if g[0]<g[1]:
+      return Dmyrange(g[0],g[1])
+    else:
+      print "ValueError:val1 should be < val2"
+    exit()
+
+  elif len(g) == 3:
+    if g[2] == 0:
+      print "StepError: step should be either >0 or <0"
+      exit()
+    elif g[0]<g[1] and g[2]>0:
+      return Tmyrange(g[0],g[1],g[2])
+    elif g[0]>g[1] and g[2]<0:
+      return Rmyrange(g[0],g[1],g[2])
+    else:
+      print "ValueError: if step is >0, val1 should be < val2 and if step 2 is <0, val1 shold be > val2"
+      exit()
+
+def Smyrange(x):
+  rng=[]
+  i=0
+  while i<x:
+    rng.append(i)
+    i=i+1
+  return rng
+
+def Dmyrange(x,y):
+  rng=[]
+  while x<y:
+    rng.append(x)
+    x=x+1
+  return rng
+
+def Tmyrange(x,y,z):
+  rng=[]
+  while x<y:
+    rng.append(x)
+    x=x+z
+  return rng
+
+def Rmyrange(x,y,z):
+  rng=[]
+  while x>y:
+    rng.append(x)
+    x=x+z
+  return rng
+
+def myrange(*g):
+  if len(g) == 1:
+    return Smyrange(g[0])
+
+  elif len(g) == 2:
+    if g[0]<g[1]:
+      return Dmyrange(g[0],g[1])
+    else:
+      print "ValueError:val1 should be < val2"
+    sys.exit()
+
+  elif len(g) == 3:
+    if g[2] == 0:
+      print "StepError: step should be either >0 or <0"
+      sys.exit()
+    elif g[0]<g[1] and g[2]>0:
+      return Tmyrange(g[0],g[1],g[2])
+    elif g[0]>g[1] and g[2]<0:
+      return Rmyrange(g[0],g[1],g[2])
+    else:
+      print "ValueError: if step is >0, val1 should be < val2 and if step 2 is <0, val1 shold be > val2"
+      sys.exit()
+
+print myrange(5)
+print myrange(2,10)
+print myrange (5,50,5)
+

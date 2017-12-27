@@ -1,0 +1,13 @@
+#!/usr/bin/python
+
+from string import ascii_letters 
+ 
+mystring='Thisismysecreatpassword!' 
+newstring='' 
+with open('decrypt.txt', 'w') as the_file: 
+    for c in mystring: 
+        if c in ascii_letters: 
+            newstring=newstring+ascii_letters[(ascii_letters.index(c)+2)%len(ascii_letters)] 
+        else: 
+            newstring+=c 
+    the_file.write(newstring)

@@ -1,0 +1,28 @@
+#!/usr/bin/python
+import MySQLdb
+import pprint
+# Open database connection
+db = MySQLdb.connect("localhost","root","root","Employee")
+
+# prepare a cursor object using cursor() method
+cursor = db.cursor()
+
+# execute SQL query using execute() method.
+#cursor.execute("SELECT VERSION()")
+cursor.execute("show databases")
+# Fetch a single row using fetchone() method.
+data = cursor.fetchall()
+#print "Database version : %s " % data
+#print type(data)
+for line in data:
+    for x in line:
+        print x 
+ #print line
+
+
+#pp = pprint.PrettyPrinter()
+#pp.pprint(data)
+
+# disconnect from server
+db.close()
+

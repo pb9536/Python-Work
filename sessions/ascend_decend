@@ -1,0 +1,12 @@
+#!/usr/bin/python
+
+s=[1,2,3,5,7,9,12,23,45,67,8,88,234,24,42]
+
+nl = []
+
+for i in range(len(s)):
+    a = min(s)
+    nl.append(a)
+    s.remove(a)
+
+print nl

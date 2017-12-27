@@ -1,0 +1,6 @@
+a="Ram"
+b="Pothraju"
+
+c="$a$b"
+
+echo $c

@@ -1,0 +1,16 @@
+#!/usr/bin/python
+#Demo of pyramid using for loop
+import time
+
+while True:
+  for i in range(0, 5):
+    for j in range(0, i+1):
+      print "*",
+    print "\n"
+
+  for l in range(0, 5):
+    for m in range(l-1, 4):
+      print "*",
+    print "\n"
+  time.sleep(1)
+

@@ -1,0 +1,63 @@
+#!/usr/bin/python
+
+class Car(object):
+    #make = "Ford"
+    #model = "Figo"
+    # color = "Red"
+    #maxspeed = "190 km/hr"
+
+    def start(self):
+        print "The Car Engine is running!"
+
+    def stop(self):
+        print "The Car Engine is stopped!"
+   
+    def __init__(self,make,model,color,maxspeed):
+        self.color = color               
+        self.make = make
+        self.model = model
+        self.maxspeed = maxspeed
+    
+    def acc(self):
+        self.color = "Pink"
+        self.acc = True
+        
+
+mycar1 = Car("Merc","Premium","Red","230km/hr")
+
+mycar1.start()
+print mycar1.make
+print mycar1.color
+print mycar1.model
+print mycar1.maxspeed
+mycar1.stop()
+
+print "-----------------------------------------"
+
+
+mycar = Car("Hyundai","XV","Blue","130km/hr")
+
+mycar.start()
+print mycar.make
+print mycar.model
+print mycar.color
+print mycar.maxspeed
+mycar.stop()
+
+print "-----------------------------------------"
+
+mycar2 = Car("Honda","IDETEH","White","190km/hr")
+mycar2.start()
+print mycar2.make
+print mycar2.model
+print mycar2.color
+print mycar2.maxspeed
+mycar2.stop()
+
+mycar1.acc()
+print mycar1.acc
+
+if mycar1.acc:
+    print "Met with accident"
+
+#mycar.stop()

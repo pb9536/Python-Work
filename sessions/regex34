@@ -1,0 +1,41 @@
+#!/usr/bin/python
+import re
+
+name="RamJ 80, RamP 70, Yamini 67, Naveen 65, Dileep 85, Mithra 75, Rajesh 45, Parimala 90 , Cat 30, mat 40, Rat 35, Vat 25, Rajat 83"
+
+names="root:x:0:0:root:/root:/bin/bash"
+
+#regx1="RamJ"
+
+#regx1="[Rr]a"
+
+#regx1="[RVCm]at"
+
+#regx1="\d0"
+
+#regx1="\d+"
+
+#regx1="[89]\d"
+
+#regx1="\w+"
+
+#regx1="(\w+)"
+
+#regx1="^\w+"
+
+regx1="\w+$"
+
+#newNames=re.findall(regx1,names)
+
+#match=re.search(regx1,names)
+
+match=re.findall(regx1,names)
+
+#print match.start(),match.end()
+
+#print match.group()
+
+#print newNames[0]
+#print len(newNames)
+
+print match

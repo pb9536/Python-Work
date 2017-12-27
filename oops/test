@@ -1,0 +1,11 @@
+#!/usr/bin/python
+
+# Create an empty list
+my_list = []
+values1 = [32, 748, 125, 458, 987, 361]
+my_list.append(values1)
+print(my_list)
+
+values2 = [42, 344, 145, 448, 187, 304]    
+my_list.append(values2)
+print(my_list)

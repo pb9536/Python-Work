@@ -1,0 +1,17 @@
+#!/usr/bin/python
+#Demo of odd even number count
+import sys
+
+arg = sys.argv[1:]
+
+print arg,
+print "\n"
+odd=0
+even=0
+for x in arg:
+  if int(x) % 2 == 0:
+    even = even+1
+  else:
+    odd = odd+1
+print "Total even count is: %d "%(even)
+print "Total odd count is: %d "%(odd)

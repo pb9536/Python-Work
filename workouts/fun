@@ -1,0 +1,29 @@
+#!/usr/bin/python
+import sys
+
+a=int(sys.argv[1])
+b=int(sys.argv[2])
+
+#a=1
+#b=2
+
+def add(a,b):
+	c=a+b
+	return c
+print "The total sum is: ",add(a,b)
+
+def min(a,b):
+	c=a-b
+	return c
+print "The diff is: ",min(a,b)
+
+def mul(a,b):
+	c=a*b
+	return c
+print "The multiplier is: ",mul(a,b)
+
+def div(a,b):
+	c=a/b
+	return c
+print "The divider is: ",div(a,b)
+

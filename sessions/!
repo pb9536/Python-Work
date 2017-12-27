@@ -1,0 +1,14 @@
+#!/usr/bin/python
+#Demo on the dialogs
+
+#input("Enter your name")
+#print "your name is %s" %(name)
+
+#Input from CLI
+tell odd or even
+
+import sys
+
+
+
+

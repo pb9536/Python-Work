@@ -1,0 +1,8 @@
+array=($(ls))
+for x in ${array[@]}
+do
+	if [ -f "$x" ]
+	then
+		echo $x
+	fi
+done

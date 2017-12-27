@@ -1,0 +1,19 @@
+for (( i=1; i<=10; i++ ))
+do
+	star=''
+	for (( j=1; j<=i; j++ ))
+	do
+		star="${star}A"
+	done
+	echo ${star}
+done
+
+for (( i=10; i>=1; i-- ))
+do
+	star=''
+	for (( j=1; j<i; j++ ))
+	do
+		star="${star}A"
+	done
+	echo ${star}
+done

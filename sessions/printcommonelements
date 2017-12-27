@@ -1,0 +1,22 @@
+#!/usr/bin/python
+#Demo to print common elements
+
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+for i in a:
+	if i in b:
+		print i,
+
+print "\n##################################"
+#Print element which are in a not in b
+for i in a:
+	if i not in b:
+		print i,
+
+print "\n##################################"
+#print elements in b which are not in a
+
+for i in b:
+	if i not in a:
+		print i,

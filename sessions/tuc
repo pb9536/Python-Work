@@ -1,0 +1,14 @@
+#!/usr/bin/python
+
+import re
+import sys
+
+#input="Ram:Ravi:Rajesh:Dileep:Yamini:Parimala:Ramesh"
+#search=re.findall("^\w+",input)
+#print "The total length of the input is: ",len(input)
+#print search
+
+for line in open(sys.argv[3]):
+	if re.search(regex,line):
+			print line,
+

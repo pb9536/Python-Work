@@ -1,0 +1,32 @@
+#Print all odd number using for loop
+#Using for loop 
+for n in {1..20..2}
+do
+	echo $n
+
+done
+
+echo 
+
+#Print odd using array loop
+for list in {1..10}
+do
+	num=$(( $list % 2 ))
+	if [ $num != 0 ]
+	then
+		echo $list
+	fi
+done
+
+echo 
+
+#print even number
+for list in {1..10}
+do
+        num=$(( $list % 2 ))
+        if [ $num == 0 ]
+        then
+                echo $list
+        fi
+done
+

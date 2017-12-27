@@ -1,0 +1,7 @@
+#!/usr/bin/python
+#demo of for loop
+
+names=["Yamini","Ram","Dileep","Naveen","Parimala"]
+
+for i in names:
+  print i,

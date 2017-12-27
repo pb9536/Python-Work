@@ -1,0 +1,19 @@
+#!/usr/bin/python
+
+import sys
+import os
+
+def print_board(num):
+	print " %s | %s | %s " %(num[0],num[1],num[2])
+	print "..........."
+	print " %s | %s | %s " %(num[3],num[4],num[5])
+	print "..........."
+	print " %s | %s | %s " %(num[6],num[7],num[8])
+
+pos=[" "," "," "," "," "," "," "," "]
+
+while True:
+	print_board(pos)
+	userinput=int(raw_input("Enter the number into the board from 1-9: "))
+		
+		

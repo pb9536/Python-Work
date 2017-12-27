@@ -1,0 +1,12 @@
+#Infinate loop example
+
+for (( ;  ; ))
+do
+	echo "hello"
+	#break
+	#exit
+	continue
+	echo "Good bye"
+done
+echo "Life after break"
+

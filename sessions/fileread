@@ -1,0 +1,9 @@
+#!/usr/bin/python
+#Read fucntion which reads by character size
+f1=open("input.txt","r")
+str=f1.read()
+#str=f1.read(30)
+print "Read string is ",str
+
+chars=f1.tell()
+print "The total number of charaters in the file are : ",chars

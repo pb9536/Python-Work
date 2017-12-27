@@ -1,0 +1,38 @@
+#!/usr/bin/python
+#Demo of tic tac toe
+
+turn = "X"
+def whoseTurn():
+	global turn
+	print
+	print
+	
+	if turn == 'X':
+		turn = 'O'
+	else:
+		turn ='X'
+	print "This is %s turn" %(turn)
+
+def board():
+	row1 = " %s | %s | %s  " %(pos[0], pos[1], pos[2])
+	row2 = " %s | %s | %s  " %(pos[3], pos[4], pos[5])
+	row3 = " %s | %s | %s  " %(pos[6], pos[7], pos[8])
+	hzl =  "-----------"
+
+	print row1
+	print hzl 
+	print row2
+	print hzl
+	print row3
+
+	whoseTurn()
+	return
+
+pos = [" "," "," "," "," "," "," "," "," "]
+while True:
+	board()
+	pc = int(raw_input("Enter your position number with in the range(1-9): "))
+	pos[pc-1] = turn
+
+
+

@@ -1,0 +1,20 @@
+#!/usr/bin/python
+
+import re
+import sys
+
+input = sys.argv[1] + "\s+(\d+)\s+(\d+:\d+)\s+(\w+)$"
+file = sys.argv[2]
+
+#Aug 10 15:02 triangle
+for line in open(file, 'r'):
+	result = re.search(input, line)
+	if result:
+# print result.group(0)
+# print result.group(1)
+# print result.group(2)
+# print result.group(3)
+# re.match
+#print line,
+# print result.group(1) + "-" + result.group(2) + "-" + result.group(3)
+		print 'This file "' + result.group(3) + '" was created on ' + result.group(2) + ' ' + result.group(1) + ' ' + sys.argv[1]

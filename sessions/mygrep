@@ -1,0 +1,12 @@
+#!/usr/bin/python
+import re
+import sys
+
+regex=sys.argv[1]
+fl=sys.argv[2]
+
+#with open(sys.argv[2]) as file:
+for line in open(fl):
+	if re.search(regex,line):
+		print line,
+

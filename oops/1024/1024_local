@@ -1,0 +1,22 @@
+#!/usr/bin/python
+from random import *
+
+def print_board(pos):
+    print "\n"
+    print " %s | %s | %s " %(pos[0],pos[1],pos[2])
+    print "..........."
+    print " %s | %s | %s " %(pos[3],pos[4],pos[5])
+    print "..........."
+    print " %s | %s | %s " %(pos[6],pos[7],pos[8])
+    print "\n"
+
+def set_num(num):
+    if num == "":
+        pos[num]= 2
+ 
+ipt=["","","","","","","","",""]
+
+while True:
+    key_input=raw_input()
+    print_board(ipt)
+    set_num(pos)

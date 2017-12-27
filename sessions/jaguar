@@ -1,0 +1,23 @@
+#Declare the number in the list
+num=( 1 2 3 4 5 6 7 8 9 10)
+
+#Do the logic and print all the numbers
+
+#for i in ${num[@]}; 
+#do 
+#	echo $i; 
+#done
+
+echo $num
+echo ${num[1]}
+
+#1 2 3 4 5 6 7 8 9 10 ---- the number which we taken in the array list
+#0 1 2 3 4 5 6 7 8 9 --- this is how the array is read from the list
+#-1 -2 -3
+
+echo ${num[-1]}
+echo ${num[-2]}
+echo ${num[-3]}
+
+
+# to -do -- Print array list in reverse order -10 -9....

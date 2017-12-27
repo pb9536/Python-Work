@@ -1,0 +1,22 @@
+#print * in increamental order
+# 10 rows and each increamental for each row
+for (( ;  ; ))
+do
+a='A'
+b='B'
+c='C'
+#b="$a$a"
+	for (( i=1; i<=10; i++ ))
+	do
+		echo $a
+		a="$a A"
+	done
+
+	for (( i=1; i<=10 ; i++ ))
+	do
+		echo $a
+		a=${a::-2}
+	done
+	echo $a
+sleep 0.5
+done

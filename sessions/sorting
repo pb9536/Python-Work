@@ -1,0 +1,22 @@
+#!/usr/bin/python 
+ 
+# sort the numbers in a giben array in ascending order 
+ 
+num = [0,13,45,67,43,6,8,2,87,26, 98,3] 
+num1 = [] 
+ 
+def sort(z): 
+  a=z[0] 
+  for i in z: 
+    if a > i: 
+      a = i 
+  return a 
+ 
+ 
+for b in range(len(num)): 
+  x= sort(num) 
+  num1.append(x) 
+  num.remove(x) 
+ 
+ 
+print num1

@@ -1,0 +1,23 @@
+#!/usr/bin/python
+import re
+
+names="Ramj 80, Ramp 70, Yamini 90"
+
+regx1="[Rr][Az]m"
+regx2="\d5"
+regx3="\w+"
+
+match=re.search(regx1,names)
+matchMarks=re.findall(regx2,names)
+newNames=re.findall(regx3,names)
+
+matchNum=re.findall(regx1,names)
+
+if match:
+	print match.start(),match.end()
+
+print matchNum
+print len(matchNum)
+print matchMarks
+print len(matchMarks)
+print newNames

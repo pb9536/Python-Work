@@ -1,0 +1,28 @@
+#!/usr/bin/python
+
+from random import randint
+
+def place_randomly(grid):
+    orientation = ['h', 'v'][randint(0, 1)] #randomly choose orientation
+
+    if orientation == 'h':
+        x = randint(0, 4)
+        y = randint(0, 6)
+        grid[y][x] = grid[y][x+1] = grid[y][x+2] = '0'
+    elif orientation == 'v':
+        x = randint(0, 6)
+        y = randint(0, 4)
+        grid[y][x] = grid[y+1][x] = grid[y+2][x] = '0'
+    print "XY:", x, y
+
+def print_grid(grid):
+    for i in grid:
+        for j in i:
+            print j,
+        print ""
+
+for i in range(10): # try it out 10 times
+    grid = [['.' for x in range(7)] for x in range(7)]
+    place_randomly(grid)
+    print_grid(grid)
+    print ""

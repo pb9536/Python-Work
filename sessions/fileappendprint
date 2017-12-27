@@ -1,0 +1,17 @@
+#!/usr/bin/python
+
+f1=open("input.txt","r")
+#print f1.read()
+
+f1.read()
+f1.close()
+
+f1=open("input.txt","a")
+f1.write("This is really amazing!\n")
+f1.close()
+
+f1=open("input.txt")
+print f1.read()
+
+print "I am in readline %s" %(f1.readline())
+

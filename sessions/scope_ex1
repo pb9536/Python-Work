@@ -1,0 +1,12 @@
+#!/usr/bin/python
+
+name="Kanth"
+
+def fun():
+	global name
+	name="Yamini"
+	print name
+
+fun()
+print name
+

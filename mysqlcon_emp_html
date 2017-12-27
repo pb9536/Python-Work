@@ -1,0 +1,32 @@
+#!/usr/bin/python
+import MySQLdb
+# Open database connection
+db = MySQLdb.connect("localhost","root","root","Employee")
+
+# prepare a cursor object using cursor() method
+cursor = db.cursor()
+
+# execute SQL query using execute() method.
+#cursor.execute("show databases")
+cursor.execute("select * from employee")
+# Fetch a single row using fetchone() method.
+data = cursor.fetchall()
+
+print "<html>"
+print "<body>"
+print "<table border='1'>"
+print "<tr>"
+
+#print type(data)
+for line in data:
+    for x in line:
+        print "<td>" + str(x) + "</td>"
+    print "</tr>"
+
+print "</table>"
+print "</body>"
+print "</html>"
+
+# disconnect from server
+db.close()
+

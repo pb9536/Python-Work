@@ -1,0 +1,13 @@
+## Get the working dir
+#x=$(OLDPWD)
+if [[  $PWD == $HOME ]]
+then
+	echo " The present working directory is $PWD "
+else
+# Back to home directory
+	#echo " $LOGNAME  your home directory"
+	#cd #@
+	cd $HOME
+	exec bash
+fi
+

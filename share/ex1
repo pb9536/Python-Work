@@ -1,0 +1,89 @@
+#Basic for syntax
+echo ""
+for i in 1 2 3 4 5
+do 
+	echo $i
+done
+
+echo "----------------------------------"
+
+echo ""
+#For using ranges
+for i in {1..4}
+do 
+	echo $i
+done
+
+echo ""
+
+echo "********************************"
+
+#For to print[1 to 10] skip 2 between each
+for i in {1..10..2}
+do
+	echo $i
+done
+
+echo ""
+
+echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+#For to print even number
+for i in {0..10..2}
+do	
+	echo $i
+done
+
+echo ""
+
+echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+#Print for using squance
+for i in $(seq 1 2 10)
+do
+	echo $i
+done
+
+echo ""
+echo "0-20 Skip Steps using -3 -- not required" 
+for i in {0..20..-1}
+do 
+	echo $i
+done
+
+echo ""
+echo "print without any loop " 
+list=(1 2 3 4 5 6)
+echo ${list[@]}
+
+echo ""
+echo "print for loop with three expression"
+for ((c=1; c<=5; c++))
+do
+	echo $c
+done
+
+#Read the file and print their contents
+for file in /etc/* 
+do
+#     echo $file
+	if [ $file == "/etc/resolv.conf" ]
+	then 
+      		echo "Found file $file"
+	fi
+#echo "Total number of files ${file[#]}"
+done
+
+echo ""
+echo "Read the file and print their contents"
+echo ""
+files="$@"
+for f in $files
+do
+	if [-f ${f}.bak ]
+	then 
+		echo "Skipping $f File .."
+		continue
+	fi
+	/bin/cp $f $f.bak
+done
+
+

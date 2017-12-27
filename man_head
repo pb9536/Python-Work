@@ -1,0 +1,15 @@
+#!/usr/bin/python 
+#copy content from /bin to a file called inputfile 
+#read the content from the inputfile 
+ 
+import os 
+ 
+for x in open("/home/ubuntu/yc5587/session/ls.txt","r"): 
+  y = 'man %s | head' %x.strip() 
+  print y 
+  p = os.popen(y) 
+  t = p.readlines() 
+  p.close() 
+  f = open('f3','a') 
+  f.write(str(t[3]).lstrip()) 
+  f.close()

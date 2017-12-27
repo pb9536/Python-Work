@@ -1,0 +1,13 @@
+#print * in increamental order
+# 10 rows and each increamental for each row
+a=1
+for (( i=1; i<=10; i++))
+do
+	echo "$a"
+	for ((k=1; k<=i; k++))
+	do
+		b=$((k+1))
+	
+	done
+	a=$a$b
+done

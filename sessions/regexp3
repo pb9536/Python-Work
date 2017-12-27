@@ -1,0 +1,14 @@
+#!/usr/bin/python
+
+import re
+
+num="10 12 122 123 142 1782 1000 7266 3811 9182 10000 11223 12376 14922 17 17728 7711 261272 271616 93372 8878811 177222 84662 7733 11999 10000000 2222811 8991172 667 8911 69711 10000000"
+
+regex1="\d+"
+regex2="\s+\d{4}\s+"
+
+match=re.findall(regex1,num)
+match1=re.findall(regex2,num)
+
+print match
+print match1

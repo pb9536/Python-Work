@@ -1,0 +1,13 @@
+#!/usr/bin/python
+
+turn=1
+def chooseTurn(ipt):
+	for i in range(1,6):
+		if ipt==1:
+				ipt=2
+		else:
+				ipt=1
+		print "This is %s turn " %(ipt)
+
+chooseTurn(turn)
+#print turn

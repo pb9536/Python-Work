@@ -1,0 +1,16 @@
+#!/usr/bin/python
+
+#conditions
+
+a=20
+b=10
+
+if a==b:
+  print "%d is equal to %d" %(a,b)
+elif a>b:
+  print "%d is greater than %d" %(a,b)
+else:
+  print "%d is less than %d" %(a,b)
+  
+
+

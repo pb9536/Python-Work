@@ -1,0 +1,9 @@
+#!/usr/bin/python
+#demo on string collection through keyboard
+
+import sys
+print "Number of Arguments: ", len(sys.argv)
+
+print "Hello %s %s, you are %s years old" %(sys.argv[1], sys.argv[2], sys.argv[3])
+
+print "Hello %s %s, you are %d years old" %(sys.argv[1], sys.argv[2], int(sys.argv[3]))

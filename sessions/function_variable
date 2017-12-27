@@ -1,0 +1,15 @@
+#!/usr/bin/python
+
+def f1(name):
+	print name
+	name="Shayam"
+	print name
+	print n
+	
+def f2():
+	print "i am in f2"
+
+n="yaminikanth"
+f1(n)
+
+print n

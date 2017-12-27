@@ -1,0 +1,14 @@
+#!/usr/bin/python
+
+#Demo to  convert Celsius to Fahrenheit
+
+import sys
+args=sys.argv[1:]
+
+def c2f(c):
+	f = (float(c)*1.8) + 32
+	return f
+
+for i in args:
+	out=c2f(i)
+	print out 

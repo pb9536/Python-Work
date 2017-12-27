@@ -1,0 +1,23 @@
+#!/usr/bin/python
+
+#copy the list to a temp file from /bin
+
+#1. get the list of commands from /bin
+
+#2. command | head 
+	# man ls | head
+
+#3. redirect the output to a temp file
+
+import os
+import sys
+
+dirlist = os.listdir("/bin")
+#print(dirlist)
+sys.stdout=open("out.txt","w")
+
+print dirlist
+
+sys.stdout.close()
+
+

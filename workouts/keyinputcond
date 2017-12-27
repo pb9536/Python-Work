@@ -1,0 +1,16 @@
+#!/usr/bin/python
+#take inputs from keyboard and display validate numbers
+
+import sys
+
+#print len(sys.argv)
+
+a=int(sys.argv[1])
+b=int(sys.argv[2])
+
+if a==b:
+	print "%d is equal to %d" %(a,b)
+elif a>b:
+	print "%d is greater than %d" %(a,b)
+else:
+	print "%d is lesser than %d" %(a,b)

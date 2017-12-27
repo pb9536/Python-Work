@@ -1,0 +1,7 @@
+#!/usr/bin/python
+#Demo of reverse a name using for loop
+
+name="Yaminikanth Chitakala"
+
+for char in range(len(name)-1, -1, -1):
+  print name[char], 

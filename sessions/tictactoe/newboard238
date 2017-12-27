@@ -1,0 +1,60 @@
+#!/usr/bin/python
+
+import sys
+import os
+
+def print_board(pos):
+	print "\n"
+	print " %s | %s | %s " %(pos[0],pos[1],pos[2])
+	print "..........."
+	print " %s | %s | %s " %(pos[3],pos[4],pos[5])
+	print "..........."
+	print " %s | %s | %s " %(pos[6],pos[7],pos[8])
+	print "\n"
+
+def choose_player(turn):
+	print "This is player %s turn" %(turn)
+	if turn=='X':
+		turn='O'
+	else:
+		turn='X'
+	return turn
+
+def winCheck(win):
+	if ((win[0]==win[1]==win[2]=='X') or (win[3]==win[4]==win[5]=='X') or (win[6]==win[7]==win[8]=='O') or (win[0]==win[3]==win[6]=='X') or (win[1]==win[4]==win[7]=='X') or (win[2]==win[5]==win[8]=='X') or (win[0]==win[4]==win[8]=='X') or (win[2]==win[4]==win[6]=='X')):
+		return 'X'
+	elif ((win[0]==win[1]==win[2]=='O') or (win[3]==win[4]==win[5]=='O') or (win[6]==win[7]==win[8]=='O') or (win[0]==win[3]==win[6]=='O') or (win[1]==win[4]==win[7]=='O') or (win[2]==win[5]==win[8]=='O') or (win[0]==win[4]==win[8]=='O') or (win[2]==win[4]==win[6]=='O')):
+		return 'O'
+
+def whoWon(player):
+	print_board(ipt)
+	print "Player %s has won the game!" %(player)
+	sys.exit()
+
+ipt=[" "," "," "," "," "," "," "," "," "]
+xturn='X'
+
+while True:
+	print_board(ipt)
+	oturn=choose_player(xturn)
+	user_input=int(raw_input("Enter your move from range 1-10: "))
+	if user_input>0 and user_input<10:
+		tmp=user_input-1
+
+		if ipt[tmp]==" ":
+			ipt[tmp]=xturn
+			xturn=oturn
+			os.system('clear')
+			checkwin=winCheck(ipt)
+			
+			if checkwin=='X':
+				whoWon(checkwin)
+			elif checkwin=='O':
+				whoWon(checkwin)
+
+		else:
+			os.system('clear')
+			print "Position already in use, choose another number!"
+	else:
+		os.system('clear')
+		print " Invalid Number, try again!"

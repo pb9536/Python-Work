@@ -1,0 +1,98 @@
+#!/usr/bin/python
+
+import os
+from random import *
+
+class Board():
+  def __init__(self):
+    self.cell = [" "," "," "," "," "," "," "," "," "," "]
+
+  def display(self):
+    print (" %s | %s | %s " %(self.cell[1], self.cell[2],self.cell[3]))
+    print ("-----------")
+    print (" %s | %s | %s " %(self.cell[4], self.cell[5],self.cell[6]))
+    print ("-----------")
+    print (" %s | %s | %s " %(self.cell[7], self.cell[8],self.cell[9]))
+
+  def initial_board(self):
+    self.cell[9] = 2
+    self.cell[8] = 2
+    self.cell[2] = 2
+    self.cell[3] = 2
+    self.cell[4] = 2
+    self.cell[6] = 2
+
+  def update_cell(self, cell_no):
+    if self.cell[cell_no] == " ":
+        self.cell[cell_no] = 2
+  
+
+  def right_move_act(self,rn):
+    if self.cell[rn] == " ":
+       if (self.cell[rn-1] == " ") and (self.cell[rn-2] != " "):
+         self.cell[rn] = self.cell[rn-2]
+         self.cell[rn-2] = " "
+       elif (self.cell[rn-2] == " ") and (self.cell[rn-1] != " "):
+         self.cell[rn] = self.cell[rn-1]
+         self.cell[rn-1] = " "
+       elif (self.cell[rn-2] != " ") and (self.cell[rn-1] != " ") and (self.cell[rn-2] == self.cell[rn-1]):
+         self.cell[rn] = self.cell[rn-2] + self.cell[rn-1]
+         self.cell[rn-2] = " "
+         self.cell[rn-1] = " "
+       elif self.cell[rn-2] != self.cell[rn-1]:
+         self.cell[rn] = self.cell[rn-1]
+         self.cell[rn-1] = self.cell[rn-2]
+         self.cell[rn-2] = " "
+       else:
+         (self.cell[rn] == self.cell[rn-1] == self.cell[rn-2] == " ") or (self.cell[rn-2] == " ") or (self.cell[rn-1] != self.cell[rn]) or (self.cell[rn-2] != self.cell[rn-1]) or (self.cell[rn-1] != self.cell[rn]) or (self.cell[rn-2] != self.cell[rn]) or (self.cell[rn-2] == self.cell[rn-1] == " "):
+
+    elif self.cell[rn] != " ":
+      if (self.cell[rn-1] == " ") and (self.cell[rn-2]!= " ") and (self.cell[rn-2]!= self.cell[rn]):
+        self.cell[rn-1] = self.cell[rn-2]
+        self.cell[rn-2] = " "
+      elif (self.cell[rn-1] == " ") and (self.cell[rn-2]!= " ") and (self.cell[rn-2] == self.cell[rn]):
+        self.cell[rn] = self.cell[rn-2] + self.cell[rn]
+        self.cell[rn-2] = " "
+      elif (self.cell[rn-2] == " ") and (self.cell[rn-1] == self.cell[rn]):
+        self.cell[rn] = self.cell[rn-1] + self.cell[rn]
+        self.cell[rn-1] = " "
+      elif (self.cell[rn-2] == self.cell[rn-1]) and (self.cell[rn-1] == self.cell[rn]):
+        self.cell[rn] = self.cell[rn-1] + self.cell[rn]
+        self.cell[rn-1] = self.cell[rn-2]
+        self.cell[rn-2] = " "
+      elif (self.cell[rn-2] != " ") and (self.cell[rn-1]!= " ") and (self.cell[rn-2] == self.cell[rn-1]) and (self.cell[rn-1] != self.cell[rn]):
+        self.cell[rn-1] = self.cell[rn-2] + self.cell[rn-1]
+        self.cell[rn-2] = " "
+        
+           
+  def right_move(self):
+    j = 3
+    if (self.cell[j] == self.cell[j-1] == self.cell[j-2] == " ") or (self.cell[j-2] == " ") or (self.cell[j-1] != self.cell[j]) or (self.cell[j-2] != self.cell[j-1]) or (self.cell[j-1] != self.cell[j]) or (self.cell[j-2] != self.cell[j]) or (self.cell[j-2] == self.cell[j-1] == " "):
+      j = j +3
+      if (self.cell[j] == self.cell[j-1] == self.cell[j-2] == " ")  or (self.cell[j-2] == " ") or (self.cell[j-1] != self.cell[j]) or (self.cell[j-2] != self.cell[j-1]) or (self.cell[j-1] != self.cell[j]) or (self.cell[j-2] != self.cell[j]) or (self.cell[j-2] == self.cell[j-1] == " "):
+        j = j +3
+        gameboard.right_move_act(j)
+      else:
+        gameboard.right_move_act(j)
+    else:
+     gameboard.right_move_act(j)
+
+gameboard = Board()
+
+gameboard.initial_board()
+gameboard.display()
+print "\n"
+gameboard.update_cell(7)
+gameboard.display()
+print "\n"
+gameboard.right_move()
+gameboard.display()
+#while True:
+ # z = raw_input()
+  #y =  randint(1,9)
+  #gameboard.update_cell(y)
+  #os.system("clear")
+  #gameboard.display()
+  #print "\n"
+  #gameboard.right_move()
+  #gameboard.display()

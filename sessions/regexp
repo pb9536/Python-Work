@@ -1,0 +1,15 @@
+#!/usr/bin/python
+import re
+
+names="RamJ, RamP, Yamini, Mithra, Dileep, Bhargav, ,Rajesh, Ramesh"
+
+regx="[Rr]a"
+
+match=re.search(regx,names)
+matchNum=re.findall(regx,names)
+
+if match:
+	print match.start(),match.end()
+
+print matchNum
+print len(matchNum)

@@ -1,0 +1,23 @@
+#!/usr/bin/python
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First', 'Hobby':['Cricket','Tennis']}
+
+name=["Yamini","Lasya","Abhi",{'Kids':['Virat','Abhi','Sunny']}]
+
+yamini = {
+	'make': 'honda',
+	'fuel': 'idtech',
+	'model': 'city',
+	'features': ['abs', 'gps', 'airbags', {'wheel': 4}]
+}
+
+print yamini['features'][3]['wheel']
+
+#yamini={'make':'honda','fuel':'idtech','model':'city',{'features':['abs','gps','airbags']}}
+
+print yamini
+print yamini['features'][1]
+print name[3]['Kids'][1]
+print "dict['Name']:",dict['Name']
+print "dict['Age']:",dict['Age']
+print "dict['Hobby']:",dict['Hobby'][0]
+print "dict['Hobby']:",dict['Hobby'][1]

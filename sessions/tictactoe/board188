@@ -1,0 +1,24 @@
+#!/usr/bin/python
+import sys
+
+def cleanBoard(sel):
+	print "\n"
+	print " %s | %s | %s " %(sel[0],sel[1],sel[2])
+	print "............."
+	print " %s | %s | %s " %(sel[3],sel[4],sel[5])
+	print "............."
+	print " %s | %s | %s " %(sel[6],sel[7],sel[8])
+	print "\n"
+
+pos = [" "," "," "," "," "," "," "," "," "]
+
+turn = "X"
+while True:
+	cleanBoard(pos)
+
+	print "This is %s turn" %(turn)
+	userinput = int(raw_input("Enter you choice in the range of 1-9 : "))
+	pos[userinput-1] = turn
+
+
+

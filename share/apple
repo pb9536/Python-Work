@@ -1,0 +1,15 @@
+apples=(red gree red red green red green red green)
+redapple=0
+greenapple=0
+for apple in ${apples[@]}
+do
+	if [ $apple = "red" ]
+	then
+		((redapple++))
+	else
+		((greeenapple++))
+	fi
+done
+
+echo "Total number of Red Apples are : $redapple "
+echo "Total number of Green Apples are : $greeenapple "

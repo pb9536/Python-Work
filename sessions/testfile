@@ -1,0 +1,15 @@
+#!/usr/bin/python
+
+# Open a file
+fo = open("input.txt", "wb")
+fo.write( "Python is a great language.\nYeah its great!!\n");
+
+# Close opend file
+fo.close()
+
+f1 = open("input.txt","a")
+f1.write("Hello i am new addition\n")
+f1.close()
+
+f1 = open("input.txt")
+print f1.read()

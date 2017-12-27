@@ -1,0 +1,39 @@
+#!/usr/bin/python
+#for loop example
+num=(1,2,3,4,5)
+
+for i in num:
+  print i
+
+print ""
+# Array Example
+
+arr=["Yamini","Raj",[1,[4,5,6],2,3],"Pari","Lasya","Abhi",[8,9,10]]
+
+print len(arr)
+print arr[6]
+print arr
+print arr[2][1][0]
+print arr[0][4]
+print arr[:]
+print arr[::1]
+print arr[::2]
+print arr[::3]
+print arr[3::]
+print (arr[3])[1]
+print arr[2][0]
+print arr[3][:3]
+
+for i in arr:
+	print i 
+
+list=(1,2,3,4,5,6,7,8,9,10)
+
+print list
+print list[1]
+
+x=list[3]
+y=list[5]
+z=x+y
+print z
+

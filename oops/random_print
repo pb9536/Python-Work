@@ -1,0 +1,9 @@
+#!/usr/bin/python
+
+from random import randint
+map = []
+
+for x in range(0,2):
+    map.append(randint(0, 2))
+
+print map,

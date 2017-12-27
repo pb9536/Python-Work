@@ -1,0 +1,11 @@
+#!/usr/bin/python
+
+fname="Yaminikanth"
+lname="Ch"
+age=25
+loc="India"
+
+def profile(z):
+	print "Hello %s" %(fname)
+
+profile(1)
